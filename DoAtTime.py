@@ -1,8 +1,12 @@
 import time
 import utils
+from datetime import date
 
 randt = utils.randomtime()
-
+dt = date.today()
+y = dt.year
+m = dt.month
+d = dt.day
 alreadyentry = True
 
 while True:
