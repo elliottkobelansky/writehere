@@ -5,15 +5,17 @@ randt = utils.randomtime()
 #show confirmation
 while True:
     while True:
-        if time.time() > randt:
+        if time.time() < randt:
 
             #open text page
-            utils.choose_prompt()
+            print('sheesh')
             #display chosen_prompt
 
             randt = utils.randomtime() + 86400
+            print(randt)
             break
         else:
+            print("notrandint yet") #Y
             time.sleep(5)
 
     #show confirmation 
