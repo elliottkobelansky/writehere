@@ -1,4 +1,5 @@
 from flask import *
+import utils
   
 app = Flask(__name__) #creating the Flask class object   
  
@@ -12,8 +13,18 @@ def home():
 @app.route('/history', methods=["GET", "POST"])
 def history():
     if request.method == 'POST':
-        print(request.form['date'])
-    return render_template('history.html')
+        try:
+            date = request.form['date'].split("-")
+            y, m, d = date[0], date[1], date[2]
+            print(y, m, d, "HIHIHI")
+            x = utils.msgread(y, m, d)
+        except:
+            x = ""
+    else:
+        x = ""
+    if not x:
+        x = "No Entry"
+    return render_template('history.html', output=x)
 
 @app.route('/friends')
 def friends():

@@ -1,16 +1,19 @@
 <!doctype html>
 <html>
     <head>
-        <title>WHWN</title>
+        <title>Write Here</title>
+        <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
     </head>
 
     <body>
-        <form class="center" method=post>
-            <input type="date" id="date" name="date">
-            <button type="submit">Go</button>
-        </form>
-        <textarea readonly="true" id='textbox' rows="10" cols="25"></textarea>
-        <p><a href="/" class="huger" onclick="">RIGHT</p>
+        <div class="center">
+            <form class="center" method=post>
+                <input type="date" id="date" name="date">
+                <button type="submit">Go</button>
+            </form>
+            <textarea readonly="true" id='textbox' rows="10" cols="25">{{ output }}</textarea>
+            <p><a href="/" class="huger" onclick="">ᐳ</p>
+        </div>
     </body>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',
     filename='styles/main.css') }}">

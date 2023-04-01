@@ -1,24 +1,33 @@
 <!doctype html>
 <html>
     <head>
-        <title>WHWN</title>
+        <title>Write Here</title>
+        <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
     </head>
 
     <body>
-        <p>Todays Prompt &#129312</p>
-        <p>What was the masogehaoieghosh</p>
         <div class="center">
-            <form id=f method="post">
-                <textarea form="f" name="text" maxlength=200 id='textbox' rows="10" cols="25"></textarea>
-                <span id="char_count">200/200</span>
-                <button name="submit" type="submit">Submit</button>
-            </form>
+            <p class="title">Write Here</p>
+            <p>Todays Prompt &#129312</p>
+            <p>What was the masogehaoieghosh</p>
+            <div class="center">
+                <form id=f method="post">
+                    <textarea form="f" name="text" maxlength=600 id='textbox' rows="8" cols="24"></textarea>
+                    <button name="submit" type="submit">Submit</button>
+                </form>
+            </div>
+        <p><a href="{{ url_for('history') }}" class="hugel" onclick=loadPage()>ᐸ</a></p>
+        <p><a href="{{ url_for('friends') }}" class="huger" onclick="">ᐳ</p>
         </div>
-        <p><a href="{{ url_for('history') }}" class="hugel" onclick=loadPage()>LEFT</a></p>
-        <p><a href="{{ url_for('friends') }}" class="huger" onclick="">RIGHT</p>
     </body>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',
     filename='styles/main.css') }}">
-
-    <script src="js/main.js"></script>
+    <script>
+        const x = false;
+        if x == true {
+            const box = document.getElementById("textbox");
+            box.readOnly = true;
+            box.style["background-color"] = "rgba(99, 255, 99, 0.3)";
+        }
+    </script>
 </html>
