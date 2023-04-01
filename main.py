@@ -1,23 +1,30 @@
 from flask import *
 import utils
+import time
   
 app = Flask(__name__) #creating the Flask class object   
+PROMPT = utils.choose_prompt()
  
-@app.route('/', methods=["GET", "POST"]) #decorator drfines the   
+@app.route('/', methods=["GET", "POST"]) 
 def home():  
     if request.method == 'POST':
-        print(request.form['text'])
+        x = request.form['text']
+        x = x.replace('\n', ' ')
+        utils.msgappend(time.time(), x, PROMPT)
 
-    return render_template('home.html')
+    return render_template('home.html', output=PROMPT)
 
 @app.route('/history', methods=["GET", "POST"])
 def history():
     if request.method == 'POST':
         try:
             date = request.form['date'].split("-")
-            y, m, d = date[0], date[1], date[2]
-            print(y, m, d, "HIHIHI")
+            y, m, d = int(date[0]), int(date[1]), int(date[2])
             x = utils.msgread(y, m, d)
+            x = list(x)
+            x = x[::-1]
+            x = "\n\n".join(x)
+
         except:
             x = ""
     else:
@@ -30,6 +37,7 @@ def history():
                 x = "No Entry"
     except:
         x = "No Entry"
+
     return render_template('history.html', output=x)
 
 @app.route('/friends')

@@ -22,7 +22,8 @@ body {
 #textbox {
     background-color: rgba(255, 255, 255, 0.05);
     font-weight: normal;
-    align: center;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -34,7 +35,7 @@ body {
 .hugel {
     font-size: 90px;
     text-decoration: none;
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     padding: 25px;
@@ -53,7 +54,7 @@ body {
 .huger {
     font-size: 90px;
     float: right;
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     text-decoration: none;

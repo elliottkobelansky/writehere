@@ -48,6 +48,7 @@ def choose_prompt():
             f.writelines(str(prompt)+"\n")
         f.close
 
+
 def randomtime():
     """Generates a UNIX timestamp between 9AM and 9PM of the same day"""
     midnight = datetime.combine(datetime.today(), time.min).strftime('%s')
