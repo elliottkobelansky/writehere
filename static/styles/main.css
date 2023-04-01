@@ -1,0 +1,55 @@
+body {
+    background-image: linear-gradient(to right, #131336, #171741, #1c1c4b, #202057, #252562);
+}
+
+* {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Lexend Deca", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#textbox {
+    background-color: transparent;
+    font-weight: normal;
+    align: center;
+
+}
+
+#date {
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 75px;
+}
+
+.hugel {
+    font-size: 111px;
+    align: left;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.hugel:hover {
+    color: green;
+    cursor: pointer;
+}
+
+.huger:hover {
+    color: green;
+    cursor: pointer;
+}
+
+.huger {
+    font-size: 111px;
+    align: right;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
