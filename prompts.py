@@ -1,10 +1,23 @@
 import os
+import unicodedata
+import random
 
-promptsset = {}
+def choose_prompt():
+    promptsset = set()
 
-#write code to read txt fiile
-rootdir = r'D:\osu! backup (1)\Songs backup'
+    with open("prompts.txt",'r') as f:
+        prompts_list = f.readlines()
 
-with open("C:\Users\austi\Documents\GitHub\WriteThere\prompts.txt",'a+') as f:
-    for it in os.scandir(rootdir):
-        promptsset.append(it)
+        for prompt in prompts_list:
+            prompt = prompt.split("\n")[0]
+            promptsset.add(prompt)   
+
+        chosen_prompt = (random.choice(list(promptsset)))
+        promptsset.remove(chosen_prompt)
+        
+    with open("prompts.txt", "w") as f:
+        for prompt in promptsset:
+            f.writelines(str(prompt)+"\n")
+        f.close
+
+choose_prompt()
