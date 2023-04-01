@@ -19,5 +19,3 @@ def choose_prompt():
         for prompt in promptsset:
             f.writelines(str(prompt)+"\n")
         f.close
-
-choose_prompt()
