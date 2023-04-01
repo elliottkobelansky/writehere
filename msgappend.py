@@ -9,5 +9,3 @@ def msgappend (TS: int, msg: str):
     with open("msgs.csv","a") as i:
         writer = csv.writer(i)
         writer.writerow((yr,mt,dy,msg))
-
-msgappend(1640323429,'HE said: "hi!"')
