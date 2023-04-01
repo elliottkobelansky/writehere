@@ -48,6 +48,10 @@ def choose_prompt():
             f.writelines(str(prompt)+"\n")
         f.close
 
+<<<<<<< HEAD
+=======
+    return(chosen_prompt)
+>>>>>>> 3abff1f9ab1615af213a8c90201a585ad4f564bf
 
 def randomtime():
     """Generates a UNIX timestamp between 9AM and 9PM of the same day"""
