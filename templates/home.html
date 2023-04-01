@@ -8,10 +8,10 @@
         <p>Todays Prompt &#129312</p>
         <p>What was the masogehaoieghosh</p>
         <div class="center">
-            <form>
-                <textarea maxlength=200 id='textbox' rows="10" cols="25"></textarea>
+            <form id=f method="post">
+                <textarea form="f" name="text" maxlength=200 id='textbox' rows="10" cols="25"></textarea>
                 <span id="char_count">200/200</span>
-                <input type="submit">
+                <button name="submit" type="submit">Submit</button>
             </form>
         </div>
         <p><a href="{{ url_for('history') }}" class="hugel" onclick=loadPage()>LEFT</a></p>
