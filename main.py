@@ -22,7 +22,13 @@ def history():
             x = ""
     else:
         x = ""
-    if not x:
+    try:
+        if not x:
+            if date:
+                x = f"No Entry for {'/'.join(date)}"
+            else:
+                x = "No Entry"
+    except:
         x = "No Entry"
     return render_template('history.html', output=x)
 
