@@ -2,27 +2,27 @@ import time
 import utils
 
 randt = utils.randomtime()
-#show confirmation
+
+alreadyentry = True
+
 while True:
-    while True:
-        if time.time() > randt:
 
-            #open text page
-            utils.choose_prompt()
-            #display chosen_prompt
+    if time.time() > randt and not utils.msgread(y, m, d):
+        alreadyentry = False
 
-            while submit button not pressed:
-                
-                time.sleep(0.3)
+    if utils.msgread(y,m,d):
+        alreadyentry = True
 
-            randt = utils.randomtime() + 86400
-            break
-        else:
-            time.sleep(5)
-
-    #show confirmation 
-    #text box light green
-    lowest = utils.readlowest()
-    txt = lowest[0] #display text as Read Only
-    prp = lowest[1]
+    if alreadyentry == True:
+        #show confirmation screen
+    if alreadyentry == False:
+        #show text box screen
+        while True:
+            if utils.msgread(y,m,d):
+                randt = utils.randomtime() + 86400
+                new_prompt = utils.choose_prompt() #display new prompt
+                alreadyentry == True
+                break
+            time.sleep(1)
     
+    time.sleep(5)
