@@ -13,7 +13,6 @@ body {
 
 }
 
-
 .center {
     margin: auto;
     width: 50%;
@@ -37,6 +36,8 @@ body {
     font-size: 90px;
     float: left;
     text-decoration: none;
+    position: fixed;
+    padding: 25px;
 }
 
 .hugel:hover {
@@ -47,10 +48,12 @@ body {
 .huger:hover {
     color: #8490FF;
     cursor: pointer;
+    padding: 25px;
 }
 
 .huger {
     font-size: 90px;
     float: right;
+    position: fixed;
     text-decoration: none;
 }
