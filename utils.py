@@ -29,9 +29,6 @@ def readlowest():
     lastRow = data[-1]
     lsLR = lastRow.split(",")
     return tuple(lsLR[3:])
-print(readlowest())
-
-
 
 def choose_prompt():
     promptsset = set()

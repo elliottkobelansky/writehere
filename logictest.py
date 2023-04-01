@@ -11,10 +11,6 @@ while True:
             utils.choose_prompt()
             #display chosen_prompt
 
-            while submit button not pressed:
-                
-                time.sleep(0.3)
-
             randt = utils.randomtime() + 86400
             break
         else:
