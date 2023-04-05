@@ -9,11 +9,11 @@
         <div class="center">
             <p class="title">Write Here</p>
             <p>Todays Prompt &#129312</p>
-            <p>{{ output }}</p>
+            <p>{{ output[1] }}</p>
             <div class="center">
                 <form id=f method="post">
-                    <textarea form="f" name="text" maxlength=600 id='textbox' rows="8" cols="18"></textarea>
-                    <button name="submit" type="submit">Submit</button>
+                    <textarea form="f" name="text" maxlength=600 id='textbox' rows="8" cols="18">{{ output[0] }}</textarea>
+                    <button value="Send" name="submit" type="submit">Submit</button>
                 </form>
             </div>
         </div>
@@ -23,11 +23,14 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',
     filename='styles/main.css') }}">
     <script>
-        const x = false;
-        if x == true {
+        const x = "{{ output[0] }}"; console.log(x)
+        if (x != "") {
             const box = document.getElementById("textbox");
+            box.innerHTML = x;
             box.readOnly = true;
             box.style["background-color"] = "rgba(99, 255, 99, 0.3)";
         }
+
+
     </script>
 </html>

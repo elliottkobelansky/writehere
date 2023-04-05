@@ -19,7 +19,7 @@ def msgread(y,m,d):
     try:
         df = pandas.read_csv("msgs.csv", names=['y', 'm', 'd', 'msg', 'prompt'])
         mp = df.loc[((df["y"] == y) & (df["m"] == m) & (df["d"] == d))][['msg', 'prompt']]
-        return tuple(mp.iloc[0])
+        return tuple(mp.iloc[-1])
     except:
         return None
 
@@ -41,17 +41,8 @@ def choose_prompt():
             promptsset.add(prompt)   
 
         chosen_prompt = (random.choice(list(promptsset)))
-        promptsset.remove(chosen_prompt)
+    return chosen_prompt
         
-    with open("prompts.txt", "w") as f:
-        for prompt in promptsset:
-            f.writelines(str(prompt)+"\n")
-        f.close
-
-<<<<<<< HEAD
-=======
-    return(chosen_prompt)
->>>>>>> 3abff1f9ab1615af213a8c90201a585ad4f564bf
 
 def randomtime():
     """Generates a UNIX timestamp between 9AM and 9PM of the same day"""
